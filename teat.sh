@@ -1,9 +1,5 @@
 #!/bin/bash 
-wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-mv apache-maven-3.6.3-bin.tar.gz ~/
-cd
-tar -xvzf apache-maven-3.6.3-bin.tar.gz
-echo 'PATH=$PATH:~/apache-maven-3.6.3/bin' >> ~/.bashrc
-echo 'JAVA_HOME=/user/lib/jvm/adoptopenjdk-11-hotspot-amd64/' >> ~/.bashrc
-sudo apt install openjdk-11-jdk-headless
-
+sudo apt-get update
+sudo apt install docker.io -y 
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
