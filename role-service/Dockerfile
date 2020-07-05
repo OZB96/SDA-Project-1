@@ -1,15 +1,17 @@
-FROM adoptopenjdk/openjdk11
+from bryandollery/maven-repo as build
 
-# Create app directory
 WORKDIR /usr/src/app
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
 
-# If you are building your code for production
-# RUN npm ci --only=production
-# Bundle app source
-COPY . .
-CMD ["java", "-jar", "/usr/src/app/target/role-service-1.0.0.jar"]
+arg rebuild
 
-EXPOSE 80
+run git clone https://github.com/OZB96/SDA-Project-1/  && \
+    cd SDA-Project-1/role-service/  && \
+    mvn clean package
+
+from adoptopenjdk/openjdk11:alpine
+
+copy --from=build "/usr/src/app/SDA-Project-1/role-service/target/role-service-1.0.0.jar" /
+
+cmd ["java", "-jar", "role-service-1.0.0.jar"] 
+
+expose 80
