@@ -7,7 +7,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get("/office", (req, res) => {
+app.get("/office/", (req, res) => {
     res.json([
         {
             "id": "1",

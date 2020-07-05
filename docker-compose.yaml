@@ -1,0 +1,45 @@
+version: '3.5'
+services:
+  Main-Website:
+    container_name: main
+    image: main/project-assessment-site
+    build: ./project-assessment-site
+    hostname: main
+    ports:
+      - "80:80"
+  person-service:
+    depends_on:
+      - Main-Website
+    container_name: person
+    image: person/person-service
+    build: ./person-service
+    hostname: person 
+    ports:
+      - "8081:80"
+  role-service:
+    depends_on:
+      - Main-Website
+    container_name: role
+    image: role/role-service
+    build: ./role-service
+    hostname: role
+    ports:
+      - "8082:80"
+  department-service:
+    depends_on:
+      - Main-Website
+    container_name: department
+    image: department/department-service
+    hostname: department
+    build: ./department-service
+    ports:
+      - "8083:80"
+  office-service:
+    depends_on:
+      - Main-Website
+    container_name: office
+    image: office/office-service
+    hostname: office
+    build: ./office-service
+    ports:
+      - "8084:80"
