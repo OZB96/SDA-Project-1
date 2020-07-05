@@ -23,7 +23,7 @@ function displayOffices(offices) {
     }
 }
 
-const officesUrl = "http://127.0.0.1:8084/office/"
+const officesUrl = "http://office:8084/office/"
 fetch(officesUrl)
     .then(response => response.json())
     .then(data => displayOffices(data));

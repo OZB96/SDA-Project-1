@@ -21,7 +21,7 @@ function displayDepartments(departments) {
     }
 }
 
-const deptUrl = "http://127.0.0.1:8083/department/"
+const deptUrl = "http://department:8083/department/"
 console.log(deptUrl)
 fetch(deptUrl)
     .then(response => response.json())

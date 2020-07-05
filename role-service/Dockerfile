@@ -11,3 +11,5 @@ WORKDIR /usr/src/app
 # Bundle app source
 COPY . .
 CMD ["java", "-jar", "/usr/src/app/target/role-service-1.0.0.jar"]
+
+EXPOSE 80
