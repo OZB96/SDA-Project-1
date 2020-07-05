@@ -7,7 +7,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get("/office", (req, res) => {
+app.get("/office/", (req, res) => {
     res.json([
         {
             "id": "1",
@@ -32,7 +32,7 @@ app.get("/office", (req, res) => {
     ]);
 });
 
-app.listen(80, () => {
-    console.log("Offices service running on port 80");
+app.listen(3001, () => {
+    console.log("Offices service running on port 3001");
 });
 
