@@ -21,8 +21,7 @@ function displayDepartments(departments) {
     }
 }
 
-const deptUrl = "http://department:8083/department/"
-console.log(deptUrl)
+const deptUrl = "http://"+ window.location.hostname +":8083/department/"
 fetch(deptUrl)
     .then(response => response.json())
     .then(data => displayDepartments(data));
