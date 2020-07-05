@@ -11,4 +11,4 @@ WORKDIR /usr/src/app
 # Bundle app source
 COPY . .
 CMD ["java", "-jar", "/usr/src/app/target/person-service-1.0.0.jar"]
-
+expose 8081

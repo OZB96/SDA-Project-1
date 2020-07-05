@@ -32,7 +32,7 @@ app.get("/office/", (req, res) => {
     ]);
 });
 
-app.listen(3001, () => {
-    console.log("Offices service running on port 3001");
+app.listen(80, () => {
+    console.log("Offices service running on port 80");
 });
 
