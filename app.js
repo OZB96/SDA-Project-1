@@ -6,8 +6,8 @@ var path = require('path');
 //app.use(express.static(__dirname));
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'jade');
-app.use(express.static(path.join(__dirname, 'public')));
-router.get('/', function(req, res, next) {
+app.use(express.static(path.join(__dirname, 'project-assessment-site/public')));
+router.get('/', function(req, res, next) q{
   res.render('index');
 });
 router.get('/ss', function(req, res, next) {
